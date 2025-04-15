@@ -1,0 +1,163 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* THEME: LIGHT */
+body.light {
+  background: linear-gradient(45deg, #87CEEB, #ffffff);
+  color: #4682B4;
+}
+
+/* THEME: DARK */
+body.dark-mode {
+  background: linear-gradient(45deg, #1e3c72, #2a5298);
+  color: #ADD8E6;
+}
+
+/* NAVBAR */
+nav {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 12px 20px;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+body.dark-mode nav {
+  background: rgba(20, 20, 20, 0.8);
+}
+
+/* NAVBAR BUTTONS */
+nav button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 22px;
+  color: #4682B4;
+  transition: transform 0.2s, color 0.3s;
+}
+
+body.dark-mode nav button {
+  color: #ADD8E6;
+}
+
+nav button:hover {
+  transform: scale(1.2);
+  color: #5F9EA0;
+}
+
+/* THEME TOGGLE */
+button.theme-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 12px;
+  border: none;
+  border-radius: 50%;
+  font-size: 22px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+body.light button.theme-toggle {
+  background-color: #4682B4;
+  color: white;
+}
+
+body.dark-mode button.theme-toggle {
+  background-color: #2a5298;
+  color: white;
+}
+
+/* GENERAL BUTTONS */
+button {
+  background: #4682B4;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+  background: #5F9EA0;
+}
+
+body.dark-mode button {
+  background: #1e3c72;
+  color: white;
+}
+
+body.dark-mode button:hover {
+  background: #2a5298;
+}
+
+/* GRID CONTAINER (Portfolio, etc.) */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  background: linear-gradient(120deg, #ADD8E6, #87CEEB);
+}
+
+.grid-item {
+  background: #ffffff;
+  text-align: center;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .grid-item {
+  background: #1e3c72;
+  color: #ADD8E6;
+  border: 1px solid #555;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  nav {
+    gap: 10px;
+    padding: 10px;
+    border-radius: 30px;
+  }
+
+  nav button {
+    font-size: 18px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .image-container img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  input,
+  textarea {
+    width: 90%;
+  }
+}
